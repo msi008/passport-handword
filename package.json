@@ -1,0 +1,34 @@
+{
+  "name": "passport-handword",
+  "version": "0.0.1",
+  "description": "Renren authentication strategy for Passport. Supports Weibo API 2.0",
+  "keywords": ["passport", "weibo", "auth", "authn", "authentication", "identity"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msi008/passport-handword.git"
+  },
+  "bugs": {
+    "url": "https://github.com/msi008/passport-handword/issues"
+  },
+  "author": {
+    "name": "msi008",
+    "email": "msi_008@163.com",
+    "url": "http://www.handword.com/"
+  },
+  "licenses": [ {
+    "type": "MIT",
+    "url": "http://www.opensource.org/licenses/MIT"
+  } ],
+  "main": "./lib/passport-handword",
+  "dependencies": {
+    "pkginfo": "0.2.x",
+    "passport-oauth": "0.1.x"
+  },
+  "devDependencies": {
+    "vows": "0.6.x"
+  },
+  "scripts": {
+    "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js"
+  },
+  "engines": { "node": ">= 0.4.0" }
+}
