@@ -1,6 +1,6 @@
 # Passport-Weibo
 
-copied and revised from passport-weibo
+copied and revised from passport-handword
 
 [Passport](http://passportjs.org/) strategy for authenticating with [Weibo](https://weibo.com/)
 using the OAuth 2.0 API.
@@ -13,21 +13,21 @@ unobtrusively integrated into any application or framework that supports
 
 ## Install
 
-    $ npm install passport-weibo
+    $ npm install git+https://github.com/msi008/passport-handword.git
 
 ## Usage
 
 #### Configure Strategy
 
-The Weibo authentication strategy authenticates users using a Weibo account
+The handword authentication strategy authenticates users using a Weibo account
 and OAuth 2.0 tokens.  The strategy requires a `verify` callback, which accepts
 these credentials and calls `done` providing a user, as well as `options`
 specifying a client ID, client secret, and callback URL.
 
-    passport.use(new WeiboStrategy({
-        clientID: WEIBO_CLIENT_ID,
-        clientSecret: WEIBO_CLIENT_SECRET,
-        callbackURL: "http://127.0.0.1:3000/auth/weibo/callback"
+    passport.use(new handwordStrategy({
+        clientID: CLIENT_ID,
+        clientSecret: CLIENT_SECRET,
+        callbackURL: "http://www.handword.com/handword/callback"
       },
       function(accessToken, refreshToken, profile, done) {
         User.findOrCreate({ weiboId: profile.id }, function (err, user) {
@@ -44,11 +44,11 @@ authenticate requests.
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
-    app.get('/auth/weibo',
-      passport.authenticate('weibo'));
+    app.get('/auth/handword',
+      passport.authenticate('handword'));
 
-    app.get('/auth/weibo/callback', 
-      passport.authenticate('weibo', { failureRedirect: '/login' }),
+    app.get('/handword/callback', 
+      passport.authenticate('handword', { failureRedirect: '/' }),
       function(req, res) {
         // Successful authentication, redirect home.
         res.redirect('/');
